@@ -1,0 +1,63 @@
+<html lang="en" ng-app="StarterApp">
+	<head>
+		<link rel="stylesheet" href="bower_components\angular-material\angular-material.min.css">
+		<link href="css/style.css" rel="stylesheet" />                
+
+		<meta name="viewport" content="initial-scale=1" />
+
+		<!-- Angular Material Dependencies -->
+		<script src="bower_components\angular\angular.min.js"></script>
+		<script src="bower_components\angular-animate\angular-animate.min.js"></script>
+		<script src="bower_components\angular-aria\angular-aria.min.js"></script>
+		<script src="bower_components\angular-ui-router\release\angular-ui-router.min.js"></script>
+
+		<script src="bower_components\angular-material\angular-material.min.js"></script>
+		<script src="bower_components\angular-material-icons\angular-material-icons.min.js"></script>
+
+		<script src="app/SideMenu.js"></script>
+		<script src="app/ChangeState.js"></script>
+		<script src="app/ngLoader.js"></script>
+	</head>
+
+	<body layout="row" ng-controller="AppCtrl">
+		<md-sidenav layout="column" class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="$mdMedia('gt-md')">
+			<md-toolbar class="md-tall md-hue-2">
+				<span flex></span>
+				<div layout="column" class="md-toolbar-tools-bottom">
+					<user-avatar></user-avatar>
+				</div>
+			</md-toolbar>
+
+			<md-list ng-controller="SideMenuController">
+				<md-subheader class="md-no-sticky">Vince Tam</md-subheader>
+
+				<md-list-item ng-repeat="MenuItem in MenuItems" ng-click="navigateTo(MenuItem.link)">
+					<div class="inset">
+						<ng-md-icon icon="{{MenuItem.icon}}"></ng-md-icon>
+					</div>
+					<p> {{ MenuItem.title }} </p>					
+				</md-list-item>
+
+				<md-divider></md-divider>
+
+				<md-subheader class="md-no-sticky">Test 2</md-subheader>
+
+			</md-list>
+		</md-sidenav>
+
+		<div layout="column" class="relative" layout-fill role="main">
+			<md-toolbar layout="row">
+				<div class="md-toolbar-tools">
+					<md-button ng-click="toggleSidenav('left')"  class="md-icon-button">
+						<md-icon aria-label="Menu" md-svg-icon="https://s3-us-west-2.amazonaws.com/s.cdpn.io/68133/menu.svg"></md-icon>
+					</md-button>
+					<h3>Hello World</h3>
+				</div>
+			</md-toolbar>
+
+			<md-content layout="column" flex class="md-padding">
+				<ui-view></ui-view>
+			</md-content>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,23 @@
+{
+  "name": "www",
+  "version": "0.0.0",
+  "authors": [
+    "vincetam <vince.tam@hkri.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.4.2",
+    "angular-ui-router": "~0.2.15",
+    "angular-animate": "~1.4.2",
+    "angular-aria": "~1.4.2",
+    "angular-material": "~0.10.0",
+    "angular-material-icons": "~0.5.0"
+  }
+}
