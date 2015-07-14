@@ -29,19 +29,16 @@
 			</md-toolbar>
 
 			<md-list ng-controller="SideMenuController">
-				<md-subheader class="md-no-sticky">Vince Tam</md-subheader>
+				<md-subheader class="md-no-sticky">Header1</md-subheader>
 
-				<md-list-item ng-repeat="MenuItem in MenuItems" ng-click="navigateTo(MenuItem.link)">
+				<md-list-item ng-repeat="MenuItem in MenuItems" ng-click="navigateTo($event, MenuItem.link)">
 					<div class="inset">
 						<ng-md-icon icon="{{MenuItem.icon}}"></ng-md-icon>
 					</div>
 					<p> {{ MenuItem.title }} </p>					
 				</md-list-item>
 
-				<md-divider></md-divider>
-
-				<md-subheader class="md-no-sticky">Test 2</md-subheader>
-
+				<md-divider></md-divider>				
 			</md-list>
 		</md-sidenav>
 
@@ -49,14 +46,14 @@
 			<md-toolbar layout="row">
 				<div class="md-toolbar-tools">
 					<md-button ng-click="toggleSidenav('left')" hide-gt-md class="md-icon-button">
-						<md-icon aria-label="Menu" md-svg-icon="https://s3-us-west-2.amazonaws.com/s.cdpn.io/68133/menu.svg"></md-icon>
+						<ng-md-icon icon="menu" style="fill: white"></ng-md-icon>
 					</md-button>
 					<h3>Hello World</h3>
 				</div>
 			</md-toolbar>
 
-			<md-content layout="column" flex class="md-padding">
-				<ui-view></ui-view>
+			<md-content flex md-scroll-y>
+				<ui-view layout="column" layout-fill layout-padding></ui-view>
 			</md-content>
 		</div>
 	</body>

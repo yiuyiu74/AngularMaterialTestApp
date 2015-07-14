@@ -1,6 +1,6 @@
 var app = angular.module("SideMenu", ['ChangeState']);
 
-app.controller("SideMenuController", ["$scope", "$state", function($scope, $state, $mdDialog) {
+app.controller("SideMenuController", ["$scope", "$state", "$mdDialog", function($scope, $state, $mdDialog) {
   $scope.MenuItems = [
     {
       link : 'home',
@@ -19,21 +19,19 @@ app.controller("SideMenuController", ["$scope", "$state", function($scope, $stat
     }
   ];
 
-  $scope.navigateTo = function(event) {
-    $state.go(event);
-    $scope.toggleSidenav('left');
-  };
+  $scope.navigateTo = function(event, link) {
+    if(link == "call") {
+      var confirm = $mdDialog.confirm()
+        .title('Call Vince')
+        .content('Do you want to call Vince?')
+        .ok('Call')
+        .cancel('Cancel')
+        .targetEvent(event);
 
-/*
-  $scope.navigateTo = function(to, event) {
-    $mdDialog.show(
-      $mdDialog.alert()
-      .title('Call Vince')
-      .content('Imagine being taken to ' + to)
-      .ariaLabel('Navigation demo')
-      .ok('Call')
-      .targetEvent(event)
-    );
+       $mdDialog.show(confirm);
+    } else {
+      $state.go(link);
+      $scope.toggleSidenav('left');
+    }
   };
-*/
 }]);
