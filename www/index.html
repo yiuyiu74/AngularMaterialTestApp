@@ -16,6 +16,7 @@
 
 		<script src="app/SideMenu.js"></script>
 		<script src="app/ChangeState.js"></script>
+		<script src="app/LoadPhoto.js"></script>
 		<script src="app/ngLoader.js"></script>
 	</head>
 
@@ -35,11 +36,12 @@
 					<div class="inset">
 						<ng-md-icon icon="{{MenuItem.icon}}" style="fill: grey"></ng-md-icon>
 					</div>
-					{{ MenuItem.title }}
+					<span>{{ MenuItem.title }}</span>
 				</md-list-item>
 
 				<md-divider></md-divider>
 			</md-list>
+
 		</md-sidenav>
 
 		<div layout="column" layout-fill role="main">

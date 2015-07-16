@@ -11,7 +11,8 @@ app.config(function($stateProvider, $urlRouterProvider) {
 
 	.state("photo", {
 		url: "/photo",
-		templateUrl: "template/photo.html"
+		templateUrl: "template/photo.html",
+		controller: "LoadPhotoController"
 	})
 
 	.state("video", {
