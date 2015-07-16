@@ -12,5 +12,10 @@ app.config(function($stateProvider, $urlRouterProvider) {
 	.state("photo", {
 		url: "/photo",
 		templateUrl: "template/photo.html"
+	})
+
+	.state("video", {
+		url: "/video",
+		templateUrl: "template/video.html"
 	});
 });

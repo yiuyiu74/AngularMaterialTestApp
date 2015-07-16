@@ -13,22 +13,20 @@ app.controller("SideMenuController", ["$scope", "$state", "$mdDialog", function(
       icon: 'photo'
     },
     {
+      link : 'video',
+      title: 'Video',
+      icon: 'videocam'
+    },
+    {
       link : 'call',
-      title: 'Call',
+      title: 'Call Vince',
       icon: 'call'
     }
   ];
 
   $scope.navigateTo = function(event, link) {
     if(link == "call") {
-      var confirm = $mdDialog.confirm()
-        .title('Call Vince')
-        .content('Do you want to call Vince?')
-        .ok('Call')
-        .cancel('Cancel')
-        .targetEvent(event);
-
-       $mdDialog.show(confirm);
+      window.location.href="tel:+852";
     } else {
       $state.go(link);
       $scope.toggleSidenav('left');
